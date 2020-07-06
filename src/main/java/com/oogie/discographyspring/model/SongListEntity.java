@@ -1,7 +1,5 @@
 package com.oogie.discographyspring.model;
 
-import com.oogie.discographyspring.SongList;
-
 import javax.persistence.*;
 
 @Entity
@@ -13,18 +11,6 @@ public class SongListEntity {
     private Integer year;
     private String album;
     private String genre;
-
-    public SongListEntity() {
-    }
-
-    public SongListEntity(SongList songList) {
-        this.id = songList.getId();
-        this.songname = songList.getSongname();
-        this.musician = songList.getMusician();
-        this.year = songList.getYear();
-        this.album = songList.getAlbum();
-        this.genre = songList.getGenre();
-    }
 
     @Id
     @GeneratedValue

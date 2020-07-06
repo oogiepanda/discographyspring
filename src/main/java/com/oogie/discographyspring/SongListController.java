@@ -25,9 +25,8 @@ public class SongListController {
     }
 
     @PostMapping("/form")
-    public String formPost(SongList songlist, Model model) {
-        model.addAttribute("songlist", songlist);
-        SongListEntity songListEntity = new SongListEntity(songlist);
+    public String formPost(SongListEntity songListEntity, Model model) {
+        model.addAttribute("songlist", songListEntity);
         repository.save(songListEntity);
         return "form";
     }

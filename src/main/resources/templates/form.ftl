@@ -9,6 +9,7 @@
         <h2>SongList</h2>
     <#if songlist?? >
         Your submitted data<br>
+        Id: ${songlist.id}<br>
         Song Name: ${songlist.songname}<br>
         Musician: ${songlist.musician}<br>
         Year: ${songlist.year}<br>
