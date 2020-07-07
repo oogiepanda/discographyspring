@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class SongListController {
     private final SongListRepository repository;
@@ -19,9 +21,11 @@ public class SongListController {
         return "redirect:/form";
     }
 
-    @GetMapping("/form")
-    public String formGet() {
-        return "form";
+    @GetMapping("/formgetall")
+    public String formGet(Model model) {
+        List<SongListEntity> songListEntities = repository.findAll();
+        model.addAttribute("songlists", songListEntities);
+        return "formgetall";
     }
 
     @PostMapping("/form")
