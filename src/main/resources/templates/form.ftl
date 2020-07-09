@@ -6,7 +6,7 @@
         <link href="/css/main.css" rel="stylesheet">
     </head>
     <body>
-        <h2>SongList</h2>
+        <h2>SongList: Post</h2>
     <#if songlist?? >
         Your submitted data<br>
         Id: ${songlist.id}<br>
@@ -28,7 +28,6 @@
                 Genre<br>
                 <input type="text" name="genre" maxlength="15"><br>
                 <input type="submit" value="Add Entry">
-<#--                <input type="button" onclick="" value="Get All Entries">-->
                 <input type="reset" value="Clear Values">
             </form>
     </#if>

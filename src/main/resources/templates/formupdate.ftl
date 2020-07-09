@@ -6,7 +6,7 @@
         <link href="/css/main.css" rel="stylesheet">
     </head>
     <body>
-        <h2>SongList</h2>
+        <h2>SongList: Update</h2>
     <#if songlist?? >
         Your updated data<br>
         Id: ${songlist.id}<br>
@@ -16,7 +16,7 @@
         Album: ${songlist.album}<br>
         Genre: ${songlist.genre}<br>
         <#else>
-            <form action="/form" method="post">
+            <form action="/formupdate" method="post">
                 Id: <br>
                 <input type="number" name="id" min="1"><br>
                 Song Name: <br>

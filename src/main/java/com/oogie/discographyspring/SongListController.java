@@ -27,6 +27,18 @@ public class SongListController {
         return "formgetall";
     }
 
+    @GetMapping("/form")
+    public String formForPost() {
+        return "form";
+    }
+
+    @PostMapping("/form")
+    public String formPost(SongListEntity songListEntity, Model model) {
+        model.addAttribute("songlist", songListEntity);
+        repository.save(songListEntity);
+        return "form";
+    }
+
     @GetMapping("/formupdate")
     public String formForUpdate() {
         return "formupdate";
@@ -46,15 +58,16 @@ public class SongListController {
         return "formupdate";
     }
 
-    @GetMapping("/form")
-    public String formForPost() {
-        return "form";
+    @GetMapping("/formdelete")
+    public String formDelete() {
+        return "formdelete";
     }
 
-    @PostMapping("/form")
-    public String formPost(SongListEntity songListEntity, Model model) {
+    @PostMapping("/formdelete")
+    public String formDelete(SongListEntity songListEntity,Model model) {
         model.addAttribute("songlist", songListEntity);
-        repository.save(songListEntity);
-        return "form";
+        repository.deleteById(songListEntity.getId());
+        return "formdelete";
     }
+
 }

@@ -6,7 +6,7 @@
         <link href="/css/main.css" rel="stylesheet">
     </head>
     <body>
-        <h2>SongList</h2>
+        <h2>SongList: Get</h2>
         <#list songlists as songlistentities>
             Id: ${songlistentities.getId()}<br>
             Song Name: ${songlistentities.getSongname()}<br>
